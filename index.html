@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FeriHelado | La Feria de la Industria Heladera en Venezuela</title>
   <meta name="description" content="FeriHelado por FEXVEN: El evento especializado en helado, gelato, paletas y postres fríos en Caracas.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- Encabezado y Navegación -->
   <header class="header">
     <div class="container nav-container">
-      <a href="#" class="logo">Feri<span>Helado</span></a>
+      <a href="index.html" class="logo">Feri<span>Helado</span></a>
       <nav class="navbar">
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#evento">El Evento</a></li>
-          <li><a href="#actividades">Actividades</a></li>
-          <li><a href="#expositores">Expositores</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="actividades.html">Actividades</a></li>
+          <li><a href="expositores.html">Expositores</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -32,78 +31,39 @@
       <h1>La Convención Heladera Más Grande de Caracas</h1>
       <p>Punto de encuentro para profesionales, marcas, proveedores e innovadores de la industria del gelato y postres fríos.</p>
       <div class="hero-buttons">
-        <a href="#contacto" class="btn btn-primary">Registrar Stand</a>
-        <a href="#evento" class="btn btn-secondary">Conocer Más</a>
+        <a href="expositores.html" class="btn btn-primary">Registrar Stand</a>
+        <a href="actividades.html" class="btn btn-secondary">Ver Agenda</a>
       </div>
     </div>
   </section>
 
-  <!-- Información del Evento -->
-  <section id="evento" class="section">
+  <!-- Resumen de Bienvenida / Sobre el Evento -->
+  <section class="section">
     <div class="container">
-      <h2 class="section-title">Sobre FeriHelado</h2>
+      <h2 class="section-title">Bienvenido a FeriHelado</h2>
+      <p class="section-subtitle">El gran evento de la heladería y repostería fría en Venezuela impulsado por FEXVEN.</p>
       <div class="grid-cards">
         <div class="card">
-          <h3>Exposición Comercial</h3>
-          <p>Muestra técnica de maquinaria de refrigeración, materias primas e insumos de última generación.</p>
+          <h3>Impulsa tu Negocio</h3>
+          <p>Conecta directamente con proveedores, distribuidores y marcas líderes del sector comercial e industrial.</p>
         </div>
         <div class="card">
-          <h3>Formación y Máster Classes</h3>
-          <p>Ciclos de conferencias técnicas y talleres sobre formulación, tendencias e innovación heladera.</p>
+          <h3>Innovación y Tendencias</h3>
+          <p>Descubre nuevas maquinarias, insumos, sabores y técnicas de vanguardia en la elaboración de gelato.</p>
         </div>
         <div class="card">
-          <h3>Batalla de los Maestros</h3>
-          <p>Competencia en vivo donde heladeros artesanales elaboran creaciones ante un jurado calificado.</p>
+          <h3>Networking Especializado</h3>
+          <p>Crea alianzas estratégicas con emprendedores, heladeros artesanales y empresarios de toda Venezuela.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sección de Expositores con Formulario -->
-  <section id="expositores" class="section bg-alt">
-    <div class="container">
-      <h2 class="section-title">Forma Parte como Expositor</h2>
-      <p class="section-subtitle">Posiciona tu marca o comercializa tus productos con los líderes del sector.</p>
-      
-      <!-- Formulario preparado para Netlify Forms -->
-      <form name="expositores-ferihelado" method="POST" data-netlify="true" class="form-expositor">
-        <input type="hidden" name="form-name" value="expositores-ferihelado">
-        
-        <div class="form-group">
-          <label for="nombre">Nombre Completo</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-        </div>
-
-        <div class="form-group">
-          <label for="empresa">Empresa / Marca</label>
-          <input type="text" id="empresa" name="empresa" required placeholder="Nombre de tu marca">
-        </div>
-
-        <div class="form-group">
-          <label for="email">Correo Electrónico</label>
-          <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
-        </div>
-
-        <div class="form-group">
-          <label for="telefono">Teléfono / WhatsApp</label>
-          <input type="tel" id="telefono" name="telefono" required placeholder="+58 412 0000000">
-        </div>
-
-        <div class="form-group">
-          <label for="mensaje">¿Qué productos o servicios ofrecerás?</label>
-          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu propuesta..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block">Enviar Solicitud</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Pie de Página -->
-  <footer class="footer">
+  <!-- Pie de Página (Sección de Contacto) -->
+  <footer id="contacto" class="footer">
     <div class="container footer-content">
       <p>&copy; FeriHelado Caracas - Un evento de <strong>FEXVEN</strong>. Todos los derechos reservados.</p>
-      <p>Sigue nuestras redes: <a href="https://instagram.com/ferihelado" target="_blank">@ferihelado</a> | <a href="https://instagram.com/fexven" target="_blank">@fexven</a></p>
+      <p>Sigue nuestras redes oficiales: <a href="https://instagram.com/ferihelado" target="_blank">@ferihelado</a> | <a href="https://instagram.com/fexven" target="_blank">@fexven</a></p>
     </div>
   </footer>
 

@@ -2,8 +2,8 @@
    VARIABLES Y ESTILOS BASE
    ========================================== */
 :root {
-  --primary-color: #ff6b6b;       /* Coral / Fresa */
-  --secondary-color: #4ecdc4;     /* Turquesa / Frescura */
+  --primary-color: #f81c1c;       /* Coral / Fresa */
+  --secondary-color: #f8f8f8;     /* Turquesa / Frescura */
   --dark-color: #2b2d42;          /* Texto principal */
   --light-bg: #fffbf5;            /* Fondo crema claro */
   --card-bg: #ffffff;             /* Fondo blanco para tarjetas */

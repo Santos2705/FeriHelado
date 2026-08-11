@@ -3,57 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FERIHELAO - Inicio</title>
-  <!-- Vinculación del CSS -->
-  <link rel="stylesheet" href="style.css">
+  <title>FeriHelado | La Feria de la Industria Heladera en Venezuela</title>
+  <meta name="description" content="FeriHelado por FEXVEN: El evento especializado en helado, gelato, paletas y postres fríos en Caracas.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- PANTALLA DE BLOQUEO -->
-  <div id="lock-screen">
-    <div class="lock-card">
-      <h2>🍦 FERIHELAO</h2>
-      <p>Ingresa la clave para acceder al evento.</p>
-      <input type="password" id="pass-input" placeholder="Clave de acceso">
-      <button onclick="verificarAcceso()">Entrar</button>
-      <p id="error-message" class="error-msg">Clave incorrecta</p>
-    </div>
-  </div>
-
-  <!-- CONTENIDO PRIVADO DE LA PÁGINA -->
-  <div id="main-content">
-    <header class="navbar">
-      <div class="logo">🍦 FERIHELAO</div>
-      <nav>
-        <a href="index.html" class="active">Inicio</a>
-        <a href="actividades.html">Actividades</a>
-        <a href="expositores.html">Expositores</a>
-        <button class="btn-logout" onclick="cerrarSesion()">Salir</button>
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Feri<span>Helado</span></a>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="actividades.html">Actividades</a></li>
+          <li><a href="expositores.html">Expositores</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main class="container">
-      <section class="hero">
-        <h1>Bienvenido a FERIHELAO 2026</h1>
-        <p>La feria de helados más grande. Explora nuestras actividades y expositores.</p>
-      </section>
+  <section id="inicio" class="hero">
+    <div class="container hero-content">
+      <span class="badge">Organizado por FEXVEN</span>
+      <h1>La Convención Heladera Más Grande de Caracas</h1>
+      <p>Punto de encuentro para profesionales, marcas, proveedores e innovadores de la industria del gelato y postres fríos.</p>
+      <div class="hero-buttons">
+        <a href="expositores.html" class="btn btn-primary">Registrar Stand</a>
+        <a href="actividades.html" class="btn btn-secondary">Ver Agenda</a>
+      </div>
+    </div>
+  </section>
 
-      <section class="cards-grid">
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Bienvenido a FeriHelado</h2>
+      <p class="section-subtitle">El gran evento de la heladería y repostería fría en Venezuela impulsado por FEXVEN.</p>
+      <div class="grid-cards">
         <div class="card">
-          <h3>🎪 Actividades</h3>
-          <p>Descubre los talleres, catas y concursos programados.</p>
-          <a href="actividades.html" class="btn-link">Ver agenda</a>
+          <h3>Impulsa tu Negocio</h3>
+          <p>Conecta directamente con proveedores, distribuidores y marcas líderes del sector comercial e industrial.</p>
         </div>
         <div class="card">
-          <h3>🍨 Expositores</h3>
-          <p>Conoce las marcas y heladerías que participan este año.</p>
-          <a href="expositores.html" class="btn-link">Ver marcas</a>
+          <h3>Innovación y Tendencias</h3>
+          <p>Descubre nuevas maquinarias, insumos, sabores y técnicas de vanguardia en la elaboración de gelato.</p>
         </div>
-      </section>
-    </main>
-  </div>
+        <div class="card">
+          <h3>Networking Especializado</h3>
+          <p>Crea alianzas estratégicas con emprendedores, heladeros artesanales y empresarios de toda Venezuela.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Vinculación del JavaScript -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-content">
+      <p>&copy; FeriHelado Caracas - Un evento de <strong>FEXVEN</strong>. Todos los derechos reservados.</p>
+      <p>Sigue nuestras redes oficiales: <a href="https://instagram.com/ferihelado" target="_blank">@ferihelado</a> | <a href="https://instagram.com/fexven" target="_blank">@fexven</a></p>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

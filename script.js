@@ -1,38 +1,26 @@
-// Clave configurada para acceder
-const CLAVE_CORRECTA = "Polar2026";
+document.addEventListener('DOMContentLoaded', () => {
+  // Manejo del estado del formulario de Netlify
+  const formExpositor = document.querySelector('.form-expositor');
 
-// Ejecutar al cargar la página
-document.addEventListener("DOMContentLoaded", function() {
-  verificarSesionGuardada();
+  if (formExpositor) {
+    formExpositor.addEventListener('submit', () => {
+      const submitButton = formExpositor.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.innerText = 'Enviando solicitud...';
+    });
+  }
+
+  // Sombra dinámica en el menú
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+      header.style.transition = 'box-shadow 0.3s ease';
+    } else {
+      header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+    }
+  });
+
+  console.log('FeriHelado - FEXVEN inicializado correctamente.');
 });
-
-function verificarAcceso() {
-  const input = document.getElementById("pass-input").value;
-  const errorMsg = document.getElementById("error-message");
-
-  if (input === CLAVE_CORRECTA) {
-    localStorage.setItem("accesoFerihelao", "true");
-    desbloquearPantalla();
-  } else {
-    errorMsg.style.display = "block";
-  }
-}
-
-function verificarSesionGuardada() {
-  if (localStorage.getItem("accesoFerihelao") === "true") {
-    desbloquearPantalla();
-  }
-}
-
-function desbloquearPantalla() {
-  const lockScreen = document.getElementById("lock-screen");
-  const mainContent = document.getElementById("main-content");
-
-  if (lockScreen) lockScreen.style.display = "none";
-  if (mainContent) mainContent.style.display = "block";
-}
-
-function cerrarSesion() {
-  localStorage.removeItem("accesoFerihelao");
-  location.href = "index.html"; // Redirige al inicio bloqueado
-}

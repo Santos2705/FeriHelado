@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expositores | FeriHelado</title>
+  <title>Expositores Confirmados | FeriHelado</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,39 +24,44 @@
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Forma Parte como Expositor</h2>
-      <p class="section-subtitle">Posiciona tu marca o comercializa tus productos con los líderes del sector.</p>
+      <h2 class="section-title">Expositores Confirmados</h2>
+      <p class="section-subtitle">Conoce las marcas y empresas que formarán parte del evento impulsado por FEXVEN.</p>
       
-      <form name="expositores-ferihelado" method="POST" data-netlify="true" class="form-expositor">
-        <input type="hidden" name="form-name" value="expositores-ferihelado">
+      <!-- Contenedor donde irás sumando las marcas -->
+      <div class="grid-cards">
         
-        <div class="form-group">
-          <label for="nombre">Nombre Completo</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+        <!-- EXPOSITOR 1: Mykonos -->
+        <div class="card card-expositor">
+          <span class="badge-categoria">Yogurt Helado</span>
+          <h3>Mykonos</h3>
+          <p>Especialistas en la preparación de yogurt helado, ofreciendo combinaciones frescas, toppings variados y productos de alta calidad.</p>
+          <div class="stand-info">
+            <strong>Stand:</strong> Confirmado
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="empresa">Empresa / Marca</label>
-          <input type="text" id="empresa" name="empresa" required placeholder="Nombre de tu marca">
+        <!-- Para agregar un nuevo expositor en el futuro, copia y pega desde aquí:
+        <div class="card card-expositor">
+          <span class="badge-categoria">Categoría</span>
+          <h3>rueba</h3>
+          <p>Descripción breve de la marca o sus productos...</p>
+          <div class="stand-info">
+            <strong>Stand:</strong> #Número
+          </div>
         </div>
+        Hasta aquí -->
 
-        <div class="form-group">
-          <label for="email">Correo Electrónico</label>
-          <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+        <div class="card card-expositor">
+          <span class="badge-categoria">Categoría</span>
+          <h3>prueba</h3>
+          <p>Descripción breve de la marca o sus productos...</p>
+          <div class="stand-info">
+            <strong>Stand:</strong> Confirmado 
+          </div>
         </div>
+         
 
-        <div class="form-group">
-          <label for="telefono">Teléfono / WhatsApp</label>
-          <input type="tel" id="telefono" name="telefono" required placeholder="+58 412 0000000">
-        </div>
-
-        <div class="form-group">
-          <label for="mensaje">¿Qué productos o servicios ofrecerás?</label>
-          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu propuesta..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block">Enviar Solicitud</button>
-      </form>
+      </div>
     </div>
   </section>
 

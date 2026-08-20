@@ -587,59 +587,53 @@ body.page-exiting {
   }
 }
 
-/* FIJAR TAMAÑO UNIFORME DEL HEADER */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #ffffff;
-  padding: 15px 0; /* Padding fijo para evitar cambios de altura */
-  transition: padding 0.3s ease, box-shadow 0.3s ease;
-}
+/* CORRECCIÓN DEFINITIVA DE HEADER RESPONSIVE EN MÓVILES */
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 105px !important; /* Espacio para el header de 2 filas */
+  }
 
-/* Sombra suave solo al hacer scroll */
-.header.header-scrolled {
-  padding: 12px 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
+  .header {
+    padding: 8px 0 !important;
+  }
 
-/* Asegurar espacio superior en las páginas para que la barra no tape el título */
-body {
-  padding-top: 80px; 
-}
-
-/* NAVEGACIÓN RESPONSIVE EN MÓVILES */
-@media (max-width: 768px) {
   .nav-container {
-    flex-direction: column;  /* Coloca el logo arriba y el menú abajo */
-    align-items: center;
-    gap: 10px;
-    padding: 10px 15px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 10px !important;
+    gap: 6px !important;
+  }
+
+  .logo {
+    font-size: 1.4rem !important;
   }
 
   .navbar {
-    width: 100%;
-    overflow-x: auto;       /* Permite scroll horizontal si no cabe todo */
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+    width: 100% !important;
   }
 
   .navbar ul {
-    display: flex;
-    justify-content: center; /* Centra los enlaces */
-    gap: 12px;              /* Reduce el espacio entre ítems */
-    padding: 5px 0;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .navbar ul li {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .navbar ul li a {
-    font-size: 0.9rem;      /* Reduce ligeramente el tamaño del texto */
-    padding: 6px 10px;
-  }
-
-  /* Ajuste de espacio superior para que la barra no tape el título */
-  body {
-    padding-top: 110px;     /* Aumenta el espacio superior por el header más alto */
+    font-size: 0.8rem !important; /* Fuente reducida para que quepan las 4 palabras */
+    padding: 4px 6px !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
   }
 }

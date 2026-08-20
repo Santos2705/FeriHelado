@@ -367,43 +367,40 @@ body {
   }
 }
 
-/* ESTILOS PARA SECCIÓN DE FLYERS (2 COLUMNAS) */
-.flyer-section {
-  background-color: #ffffff;
-  text-align: center;
-}
-
+/* GRILLA DE FLYERS / INFORMACIÓN (MÁS GRANDES) */
 .flyer-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
-  gap: 30px;                             /* Espacio entre las dos fotos */
-  max-width: 950px;                      /* Ancho máximo del contenedor */
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  align-items: center;
+  max-width: 1200px; /* Amplía el contenedor general para dar más espacio a las imágenes */
+  margin: 30px auto 0 auto;
 }
 
 .flyer-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 .flyer-img {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flyer-img:hover {
-  transform: scale(1.02);
+  transform: scale(1.03); /* Ligero zoom interactivo */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
-/* En teléfonos móviles se muestra una debajo de la otra */
+/* Adaptación a móviles (una debajo de otra para no perder legibilidad) */
 @media (max-width: 768px) {
   .flyer-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 100%;
   }
 }
 

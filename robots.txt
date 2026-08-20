@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://https://ferihelado.netlify.app/sitemap.xml
+
+Sitemap: https://santos2705.github.io/FeriHelado/sitemap.xml

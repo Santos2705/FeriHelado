@@ -609,3 +609,37 @@ body.page-exiting {
 body {
   padding-top: 80px; 
 }
+
+/* NAVEGACIÓN RESPONSIVE EN MÓVILES */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;  /* Coloca el logo arriba y el menú abajo */
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  .navbar {
+    width: 100%;
+    overflow-x: auto;       /* Permite scroll horizontal si no cabe todo */
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navbar ul {
+    display: flex;
+    justify-content: center; /* Centra los enlaces */
+    gap: 12px;              /* Reduce el espacio entre ítems */
+    padding: 5px 0;
+  }
+
+  .navbar ul li a {
+    font-size: 0.9rem;      /* Reduce ligeramente el tamaño del texto */
+    padding: 6px 10px;
+  }
+
+  /* Ajuste de espacio superior para que la barra no tape el título */
+  body {
+    padding-top: 110px;     /* Aumenta el espacio superior por el header más alto */
+  }
+}

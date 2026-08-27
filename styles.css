@@ -635,3 +635,54 @@ body.page-exiting {
   }
 }
 
+/* ESTILOS DE CABECERA DIVIDIDA PARA EXPOSITORES */
+.expositores-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.expositores-title-box {
+  flex: 1;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.expositores-slider-box {
+  flex: 0 0 320px; /* Tamaño fijo elegante para el cuadro del slider */
+}
+
+/* Ajuste del mini carrusel de expositores */
+.expositores-slider-box .mini-carousel {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.expositores-slider-box .mini-carousel .carousel-track {
+  height: 200px; /* Altura ideal para mostrar logos e imágenes */
+}
+
+/* ADAPTACIÓN A MÓVILES */
+@media (max-width: 768px) {
+  .expositores-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-left {
+    text-align: center !important;
+  }
+
+  .expositores-slider-box {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
+}

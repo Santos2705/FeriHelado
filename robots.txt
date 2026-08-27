@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://santos2705.github.io/FeriHelado/sitemap.xml
+Sitemap: https://ferihelado.com/sitemap.xml
 
 
 
-hola cambios 

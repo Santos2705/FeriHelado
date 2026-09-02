@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Expositores Confirmados | FeriHelado</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
@@ -16,7 +16,7 @@
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="actividades.html">Actividades</a></li>
-          <li><a href="expositores.html">Expositores</a></li>
+          <li><a href="expositores.html" class="active">Expositores</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
@@ -28,62 +28,107 @@
       
       <!-- ENCABEZADO DIVIDIDO EN DOS COLUMNAS -->
       <div class="expositores-header">
-        
-        <!-- LADO IZQUIERDO: TEXTOS -->
         <div class="expositores-title-box">
           <h2 class="section-title text-left">Expositores Confirmados</h2>
           <p class="section-subtitle text-left">Conoce las marcas y empresas que formarán parte de FeriHelado 2026</p>
         </div>
 
-        <!-- LADO DERECHO: CARRUSEL DE LOGOS / FOTOS -->
         <div class="expositores-slider-box">
           <div class="mini-carousel">
             <div class="carousel-track">
-              <!-- Reemplaza o agrega las fotos de los logos de tus expositores -->
               <div class="carousel-slide active"><img src="img/mykonos.jpg" alt="Logo Expositor Mykonos"></div>
-              <div class="carousel-slide"><img src="img/nestle.jpg" alt="Logo Expositor Grupo La Florida"></div>
-              <div class="carousel-slide"><img src="img/florida.jpeg" alt="Logo Expositor Nestlé"></div>
+              <div class="carousel-slide"><img src="img/nestle.jpg" alt="Logo Expositor Nestlé"></div>
+              <div class="carousel-slide"><img src="img/florida.jpeg" alt="Logo Expositor La Florida"></div>
             </div>
             <button class="carousel-btn mini-btn prev-btn" aria-label="Anterior">&#10094;</button>
             <button class="carousel-btn mini-btn next-btn" aria-label="Siguiente">&#10095;</button>
           </div>
         </div>
-
       </div>
 
-      <!-- CONTENEDOR DE TARJETAS DE EXPOSITORES -->
+      <!-- CONTENEDOR DE TARJETAS DE EXPOSITORES (SOLO LOGOS) -->
+<!-- CONTENEDOR DE TARJETAS FLIP (GIRATORIAS) -->
       <div class="grid-cards">
         
         <!-- EXPOSITOR 1: Mykonos -->
-        <div class="card card-expositor">
-          <span class="badge-categoria">Expositor</span>
-          <h3>Mykonos</h3>
-          <p>Especialistas en la preparación de yogurt helado, ofreciendo combinaciones frescas, toppings variados y productos de alta calidad.</p>
-          <div class="stand-info">
-            
+        <div class="flip-card" onclick="toggleCard(this)">
+          <div class="flip-card-inner">
+            <!-- FRENTE: Solo Logo -->
+            <div class="flip-card-front">
+              <img src="img/mykonos.jpg" alt="Logo Mykonos" class="expositor-card-img">
+              <span class="click-hint">Toca para ver información 🔄</span>
+            </div>
+            <!-- REVERSO: Información -->
+            <div class="flip-card-back">
+              <span class="badge-categoria">Empresa</span>
+              <h3>Mykonos</h3>
+              <p>Especialistas en la preparación de yogurt helado, ofreciendo combinaciones frescas, toppings variados y productos de alta calidad.</p>
+            </div>
           </div>
         </div>
 
         <!-- EXPOSITOR 2: Grupo La Florida -->
-        <div class="card card-expositor">
-          <span class="badge-categoria">Expositor</span>
-          <h3>Grupo La Florida</h3>
-          <p>Principal fábrica de barquillas con más de 70 años de trayectoria: "Si es dulce y crocante, es La Florida".</p>
-          <div class="stand-info">
-            
+        <div class="flip-card" onclick="toggleCard(this)">
+          <div class="flip-card-inner">
+            <!-- FRENTE: Solo Logo -->
+            <div class="flip-card-front">
+              <img src="img/florida.jpeg" alt="Logo Grupo La Florida" class="expositor-card-img">
+              <span class="click-hint">Toca para ver información 🔄</span>
+            </div>
+            <!-- REVERSO: Información -->
+            <div class="flip-card-back">
+              <span class="badge-categoria">Empresa</span>
+              <h3>Grupo La Florida</h3>
+              <p>Principal fábrica de barquillas con más de 70 años de trayectoria: "Si es dulce y crocante, es La Florida".</p>
+            </div>
           </div>
         </div>
 
         <!-- EXPOSITOR 3: Nestlé -->
-        <div class="card card-expositor">
-          <span class="badge-categoria">Expositor</span>
-          <h3>Nestlé</h3>
-          <p>Líder mundial en la industria de alimentos y bebidas. Presenta en FeriHelado sus icónicas líneas de helados, portafolio comercial e innovaciones de distribución para el mercado venezolano.</p>
-          <div class="stand-info">
-            
+        <div class="flip-card" onclick="toggleCard(this)">
+          <div class="flip-card-inner">
+            <!-- FRENTE: Solo Logo -->
+            <div class="flip-card-front">
+              <img src="img/nestle.jpg" alt="Logo Nestlé" class="expositor-card-img">
+              <span class="click-hint">Toca para ver información 🔄</span>
+            </div>
+            <!-- REVERSO: Información -->
+            <div class="flip-card-back">
+              <span class="badge-categoria">Empresa</span>
+              <h3>Nestlé</h3>
+              <p>Líder mundial en la industria de alimentos y bebidas. Presenta en FeriHelado sus icónicas líneas de helados e innovaciones de distribución.</p>
+            </div>
           </div>
         </div>
 
+      </div>
+  </section>
+
+  <!-- VENTANA EMERGENTE (MODAL) PARA DETALLES DEL EXPOSITOR -->
+  <div id="expositorModal" class="modal-overlay" onclick="closeExpositorModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeExpositorModal(event)">&times;</button>
+      <div class="modal-header-img">
+        <img id="modalImg" src="" alt="Logo Expositor">
+      </div>
+      <span id="modalCategoria" class="badge-categoria">Empresa</span>
+      <h3 id="modalTitulo">Nombre Expositor</h3>
+      <p id="modalDescripcion">Descripción detallada...</p>
+    </div>
+  </div>
+
+  <!-- Sección de Patrocinantes / Sponsors -->
+  <section class="section sponsors-section">
+    <div class="container">
+      <div class="sponsors-container">
+        <div class="sponsors-track">
+          <div class="sponsor-logo"><img src="img/logo-patrocinante1.png" alt="Patrocinante 1"></div>
+          <div class="sponsor-logo"><img src="img/logo-patrocinante2.png" alt="Patrocinante 2"></div>
+          <div class="sponsor-logo"><img src="img/logo-patrocinante3.png" alt="Patrocinante 3"></div>
+          <div class="sponsor-logo"><img src="img/logo-patrocinante4.png" alt="Patrocinante 4"></div>
+          <div class="sponsor-logo"><img src="img/logo-patrocinante1.png" alt="Patrocinante 1"></div>
+          <div class="sponsor-logo"><img src="img/logo-patrocinante2.png" alt="Patrocinante 2"></div>
+        </div>
       </div>
     </div>
   </section>

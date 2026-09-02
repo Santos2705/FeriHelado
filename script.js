@@ -93,3 +93,22 @@ document.addEventListener('DOMContentLoaded', () => {
     checkScroll(); // Ejecuta al cargar para evitar saltos de tamaño
   }
 });
+
+
+// LÓGICA DE GIRADO DE TARJETAS (FLIP CARD)
+function toggleCard(cardElement) {
+  // 1. Si la tarjeta clickeada ya está volteada, la regresamos a su estado normal
+  if (cardElement.classList.contains('flipped')) {
+    cardElement.classList.remove('flipped');
+    return;
+  }
+
+  // 2. Cerramos (des-volteamos) cualquier otra tarjeta que esté abierta
+  const allCards = document.querySelectorAll('.flip-card');
+  allCards.forEach(card => {
+    card.classList.remove('flipped');
+  });
+
+  // 3. Volteamos únicamente la tarjeta seleccionada
+  cardElement.classList.add('flipped');
+}

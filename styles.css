@@ -701,12 +701,13 @@ body.page-exiting {
   padding: 20px 0;
 }
 
-.sponsors-track {
+ .sponsors-track {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   width: max-content;
-  animation: scrollSponsors 20s linear infinite;
+  will-change: transform;
+  /* animation: scrollSponsors 20s linear infinite;  <-- ELIMINA O COMENTA ESTA LÍNEA */
 }
 
 .sponsors-track:hover {
@@ -748,12 +749,19 @@ body.page-exiting {
   }
 }
 
-/* Adaptación a dispositivos móviles */
 @media (max-width: 768px) {
   .sponsor-logo {
     width: 130px;
     height: 75px;
+    flex-shrink: 0; /* EVITA QUE LOS LOGOS SE APLASTEN */
   }
+  
+  .sponsor-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* MANTIENE LA PROPORCIÓN DEL LOGO */
+  }
+
   .sponsors-track {
     gap: 20px;
   }

@@ -92,8 +92,36 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', checkScroll);
     checkScroll(); // Ejecuta al cargar para evitar saltos de tamaño
   }
-});
 
+  // --- MARQUESINA INFINITA FLUIDA PARA PATROCINANTES (PC Y MÓVIL) ---
+  const sponsorTracks = document.querySelectorAll('.sponsors-track');
+
+  sponsorTracks.forEach(track => {
+    // Clonamos los logos dinámicamente para que la lista nunca se quede vacía
+    const originalLogos = Array.from(track.children);
+    originalLogos.forEach(logo => {
+      const clone = logo.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    let scrollPos = 0;
+    const speed = 0.6; // Ajusta la velocidad según tu preferencia (más alto = más rápido)
+
+    function animateSponsors() {
+      scrollPos += speed;
+
+      // Al desplazarse la mitad del riel (los elementos originales), se reinicia a 0 imperceptiblemente
+      if (scrollPos >= track.scrollWidth / 2) {
+        scrollPos = 0;
+      }
+
+      track.style.transform = `translateX(-${scrollPos}px)`;
+      requestAnimationFrame(animateSponsors);
+    }
+
+    animateSponsors();
+  });
+});
 
 // LÓGICA DE GIRADO DE TARJETAS (FLIP CARD)
 function toggleCard(cardElement) {

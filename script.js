@@ -140,3 +140,39 @@ function toggleCard(cardElement) {
   // 3. Volteamos únicamente la tarjeta seleccionada
   cardElement.classList.add('flipped');
 }
+
+
+// --- LÓGICA DE AMPLIAR SOLO IMÁGENES ESTÁTICAS (LIGHTBOX) ---
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('imgExpanded');
+  const closeModalBtn = document.querySelector('.close-modal');
+
+  // Seleccionamos únicamente las imágenes que tienen la clase "img-expandible"
+  const staticImages = document.querySelectorAll('.img-expandible');
+
+  staticImages.forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (modal && modalImg) {
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Imagen ampliada';
+      }
+    });
+  });
+
+  // Cerrar al hacer clic en la (X)
+  if (closeModalBtn && modal) {
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
+
+  // Cerrar al hacer clic en el fondo oscuro
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.style.display = 'none';
+      }
+    });
+  }
